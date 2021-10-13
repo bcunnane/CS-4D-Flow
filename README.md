@@ -1,9 +1,11 @@
 [Home](https://bcunnane.github.io/)  
 [View Code](https://github.com/bcunnane/CS_4D_flow)
 
+### Background
+
 Most of my data is collected at UC San Diego's Radiology Imaging Laboratory on a 1.5T GE scanner. This allows for equipment and software developed in the past to be easily used again for new experiments. A 3T Siemens scanner is available at SDSU, but using it means porting our old equipment to the new system and learning to work with different MR sequences. In this case, we were interested in using the Siemens compressed sensing (CS) 4D flow sequence to collect velocity encoded phase contrast (VEPC) data of the leg. I aided in setting up our test equipment at the SDSU scanner, and developed a DICOM processing MATLAB script for managing data collected with the Siemens sequence. 
 
-## DICOM processing
+### DICOM processing
 
 The processing steps are:
 
@@ -13,7 +15,7 @@ The processing steps are:
 4. Import the combined magnitude DICOM data as magnitude, m.
 5. Read the header info of each DICOM to get slice locations. Determine where the slice locations repeat, indicating a new frame.
 
-## Testing
+### Testing
 
 Velocity data collected from the Siemens sequence was evaluated using the following steps. The example below uses the 21092116RH dataset collected at SDSU, which has 24 slices and 50 frames. 
 
