@@ -41,12 +41,11 @@ vol_size(3) = vol_repeats(2) - vol_repeats(1);
 [vol_size(1),vol_size(2),~] = size(vepc_data);
 dynamic.vol_size = vol_size;
 
-%% Select slice to draw ROI
-montage(dynamic.m(:,:,1:24),colormap('gray'),'ThumbnailSize',[],'Size',[3 8]) % view slices
+%% Testing 
+montage(dynamic.m(:,:,1:24),colormap('gray'),'ThumbnailSize',[],'Size',[3 8]) % view slices if needed
 slice = 14; % set slice of interest that ROI will be drawn on
 
-%% Draw ROI
-% matrix info
+% get matrix info
 m = dynamic.vol_size(1);
 n = dynamic.vol_size(2);
 h = dynamic.vol_size(3);
@@ -61,7 +60,7 @@ roi = [roi;roi(1,:)]; %close roi by including first point again
 mask = poly2mask(roi(:,1), roi(:,2), m, n);
 close
 
-%% Get average velocity for each frame
+% get average velocity for each frame
 v = zeros(1,frs);
 data = dynamic.vz(:,:,slice:h:h*frs);
 for fr = 1:frs
@@ -70,7 +69,7 @@ for fr = 1:frs
     v(fr) = mean(im);
 end
 
-%% Plot results
+% plot results
 plot(v)
 title('vz')
 ylabel('velocity')
