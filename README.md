@@ -19,15 +19,15 @@ The processing steps are:
 
 Velocity data collected from the Siemens sequence was evaluated using the following steps. The example below uses the 21092116RH dataset collected at SDSU, which has 24 slices and 50 frames. 
 
-1. Display a montage of all frame 1 slices in the magnitude data. Select a "slice of interest" in the magnitude data on which to draw the region of interest (ROI).
+- Display a montage of all frame 1 slices in the magnitude data. Select a "slice of interest" in the magnitude data on which to draw the region of interest (ROI).
 
 ![Slice Montage](images/slice montage.png)
 > Montage of frame 1 of all slices. Used to select slice with clearest view of MG muscle. 
 
-2. Draw the ROI on medial gastrocnemius (MG) muscle and transform into a mask.
-3. Select all frames corresponding to the slice of interest in the velocity data. Use the mask to select data within the ROI for these slices. 
-4. Calculate average velocity in the ROI for each frame and plot the results.
-5. Repeat for each velocity direction x, y, and z.
+- Draw the ROI on medial gastrocnemius (MG) muscle and transform into a mask.
+- Select all frames corresponding to the slice of interest in the velocity data. Use the mask to select data within the ROI for these slices. 
+- Calculate average velocity in the ROI for each frame and plot the results.
+- Repeat for each velocity direction x, y, and z.
 
 ![ROI and Velocity Plots](images/21092116RH CS4dFlow slice 14 velocities rescaled.png)
 > Velocity plots for ROI on MG muscle
