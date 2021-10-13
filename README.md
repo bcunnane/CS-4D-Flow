@@ -25,8 +25,8 @@ Velocity data collected from the Siemens sequence was evaluated using the follow
 4. Calculate average velocity in the ROI for each frame and plot the results.
 5. Repeat for each velocity direction x, y, and z.
 
-![Slice Montage](https://github.com/bcunnane/CS_4D_flow/images/slice montage.png)
+![Slice Montage](images/slice montage.png)
 > Montage of frame 1 of all slices. Used to select slice with clearest view of MG muscle. 
 
-![ROI and Velocity Plots](https://github.com/bcunnane/CS_4D_flow/images/21092116RH CS4dFlow slice 14 velocities rescaled.png)
+![ROI and Velocity Plots](images/21092116RH CS4dFlow slice 14 velocities rescaled.png)
 > Velocity plots for ROI on MG muscle
