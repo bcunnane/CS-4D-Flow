@@ -3,7 +3,7 @@
 
 ### Background
 
-Most of my data is collected at UC San Diego's Radiology Imaging Laboratory on a 1.5T GE scanner. This allows for equipment and software developed in the past to be easily used again for new experiments. A 3T Siemens scanner is available at SDSU, but using it means porting our old equipment to the new system and learning to work with different MR sequences. In this case, we were interested in using the Siemens compressed sensing (CS) 4D flow sequence to collect velocity encoded phase contrast (VEPC) data of the leg. I aided in setting up our test equipment at the SDSU scanner, and developed a DICOM processing MATLAB script for managing data collected with the Siemens sequence. 
+Most of my data is collected at UC San Diego's Radiology Imaging Laboratory on a 1.5T GE scanner. This allows for equipment and software developed in the past to be easily used again for new experiments. A 3T Siemens scanner is available at SDSU, but using it means porting the lab's equipment to the new system and learning to work with different MR sequences. In this case, we were interested in using the Siemens compressed sensing (CS) 4D flow sequence to collect velocity encoded phase contrast (VEPC) data of the leg. I aided in setting up our test equipment at the SDSU scanner, and developed a DICOM processing MATLAB script for managing data collected with the Siemens sequence. 
 
 ### DICOM processing
 
@@ -11,9 +11,9 @@ The processing steps are:
 
 1. Import DICOM phase data as single matrix where each 'slice' of the volume is an image frame.
 2. If imported images are unsigned, perform linear rescaling using RescaleSlope and RescaleIntercept values in DICOM header info.
-3. Repeat for each velocity direction x,y, and z. Use the DICOM header info to assign velocity direction ('Through' = vz, 'ap' = vx, 'fh' = vy).
+3. Repeat for each velocity direction x, y, and z. Use the DICOM header info to assign velocity direction ('Through' = vz, 'ap' = vx, 'fh' = vy).
 4. Import the combined magnitude DICOM data as magnitude, m.
-5. Read the header info of each DICOM to get slice locations. Determine where the slice locations repeat, indicating a new frame.
+5. Read the header info of each DICOM to get slice locations. Determine where the slice locations repeat, indicating a new time frame.
 
 ### Testing
 
