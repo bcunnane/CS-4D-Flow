@@ -1,11 +1,11 @@
 [Home](https://bcunnane.github.io/)  
 [View Code](https://github.com/bcunnane/CS_4D_flow)
 
-### Background
+### Siemens CS 4D Flow sequence for muscle strain analysis
 
-Most of my data is collected at UC San Diego's Radiology Imaging Laboratory on a 1.5T GE scanner. This allows for equipment and software developed in the past to be easily used again for new experiments. A 3T Siemens scanner is available at SDSU, but using it means porting the lab's equipment to the new system and learning to work with different MR sequences. In this case, we were interested in using the Siemens compressed sensing (CS) 4D flow sequence to collect velocity encoded phase contrast (VEPC) data of the leg. I aided in setting up our test equipment at the SDSU scanner, and developed a DICOM processing MATLAB script for managing data collected with the Siemens sequence. 
+I assisted a project demonstrating the feasibility of using the Siemens CS 4D Flow sequence, originally designed for blood flow imaging, to analyze strain in a volume during muscle contraction. Earlier muscle volume strain experiments utilized multiple 2D slices, requiring careful positioning and possible information loss between slices. In contrast, this new sequence avoids these issues with a 3D volume acquisition made practical by highly accelerated compressed sensing. I assisted setting up and executing an experiment similar to that described in 1b and developed a MATLAB script for processing the resulting VEPC DICOMs (see below). The 3D strain tensors were successfully calculated for voxels in the volume, demonstrating this sequence’s usefulness for skeletal muscle research despite blood flow being much faster than muscle contraction. Working with compressed sensing is exciting because of the technological possibilities faster imaging enables, so I am looking forward to continuing to develop this project in the coming months. 
 
-### DICOM processing
+## DICOM processing
 
 The processing steps are:
 
@@ -15,7 +15,7 @@ The processing steps are:
 4. Import the combined magnitude DICOM data as magnitude, m.
 5. Read the header info of each DICOM to get slice locations. Determine where the slice locations repeat, indicating a new time frame.
 
-### Testing
+## Testing
 
 Velocity data collected from the Siemens sequence was evaluated using the following steps. The example below uses the 21092116RH dataset collected at SDSU, which has 24 slices and 50 frames. 
 
